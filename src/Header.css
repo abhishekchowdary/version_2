@@ -1,0 +1,38 @@
+.header{
+    height: 15vh;
+    display: flex;
+    align-items:center;
+    background-color: beige;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header_logo{
+    width: 10%;
+    object-fit: contain;
+    margin: 0 2vh;
+    margin-top: 2vh;
+}
+
+.header_quote{
+    font-family: cursive;
+    font-size: 3vh;
+    font-stretch: expanded;
+    align-items: flex-start;
+    padding: 10vh;
+    width: max-content;
+}
+
+.header_wisher{
+    font-size: medium;
+    padding-left:70vh;
+}
+
+.header_profile{
+    height: 22px !important;
+    font-stretch: extra-expanded;
+    align-items: center;
+    padding-left: 5%;
+    size: 5%;
+}

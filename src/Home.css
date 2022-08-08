@@ -1,0 +1,66 @@
+.home{
+    background-image:url("./images/immm.webp");
+    width: 100%;
+    height: 85vh;
+}
+
+.home_CID{
+    padding-top: 3vh;
+    padding-left: 75%;
+    align-items: right;
+    border-radius: 30vh;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: bold;
+    size: large;
+    font-size: large;
+}
+
+.form1{
+    font-size: large;
+    font-style: bold;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 5vh;
+    padding-left: 5vh;
+    width: max-content;
+    border-spacing: 3vh;
+    float: left;
+
+}
+
+.dataLine{
+    text-align: center;
+}
+
+.form2{
+    font-size: large;
+    font-style: bold;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 5vh;
+    padding-left: 8vh;
+    width: max-content;
+    border-spacing: 3vh;
+    float: left;
+
+}
+
+.home_container_4{
+    float: right;
+}
+.form3{
+    font-size: large;
+    font-style: bold;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 5vh;
+    padding-left: 5vh;
+    width: max-content;
+    border-spacing: 15vh;
+    float: left;
+    margin-right: 20px;
+}
+
+.form3 > tr{
+height: 10px;}
+
+.Transfer_Button{
+    align-content: center;
+}
