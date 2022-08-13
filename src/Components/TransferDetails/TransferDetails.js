@@ -9,9 +9,9 @@ const TransferDetails = () => {
         <input type="text" name="name" className="v1"></input>
         <label>Institute Name</label>
         <input type="Text" name="Inst_Name" disabled></input>
-        <lable>Reciever Account Number</lable>
+        <label>Reciever Account Number</label>
         <input type="number" name="reciever_ID"></input>
-        <lable> Account Holder Name</lable>
+        <label> Account Holder Name</label>
         <input type="text" name="Reciever_Name"></input>
       </form>
     </div>

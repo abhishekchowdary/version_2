@@ -16,7 +16,7 @@ function Header() {
       <Navbar bg="dark" variant="dark">
         <Container>
           <img className="header_logo" src={img2} alt="DBS"></img>
-          <Navbar.Brand class="navbar-brand mb-0 h1 fs-2">Live More Bank Less</Navbar.Brand>
+          <Navbar.Brand className="navbar-brand mb-0 h1 fs-2">Live More Bank Less</Navbar.Brand>
           <Nav className="mr-auto">
             <Nav.Link href="/home">Transaction</Nav.Link>
             <Nav.Link href="/Logger">Logger</Nav.Link>

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import DropDown from "../DropDown/DropDown";
 const TransferAmount = () => {
-  const [amount, setAmount] = useState([]);
-  const [currency, setCurrency] = useState([]);
-  const [finalAmount, setFinalAmount] = useState({ tax: "", totalAmount: "" });
+  const [amount, setAmount] = useState(0);
+  const [currency, setCurrency] = useState('');
+  const [finalAmount, setFinalAmount] = useState({ tax: 0, totalAmount: 0 });
   const currencyList = {
     USD: 78.24,
     JPY: 0.654,
@@ -14,7 +14,7 @@ const TransferAmount = () => {
     setCurrency(target.value);
   };
   useEffect(() => {
-    const temp = amount * currencyList[currency];
+    const temp = amount * ((typeof(currencyList[currency]) === 'undefined')?0:currencyList[currency])
     setFinalAmount({ tax: temp * 0.0025, totalAmount: temp + temp * 0.0025 });
   }, [amount, currency]);
   return (
@@ -25,7 +25,7 @@ const TransferAmount = () => {
         {/* <Currency handleChange={handleChange} currencyList={currencyList} /> */}
         <DropDown DataList = {currencyList} handleChange = {handleChange}/>
         
-        <lable>Transfering Amount </lable>
+        <label>Transfering Amount </label>
         <input
           type="Double"
           name="Transfering_Amount"
@@ -33,7 +33,7 @@ const TransferAmount = () => {
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
         ></input>
-        <lable>Transaction Fees in INR</lable>
+        <label>Transaction Fees in INR</label>
         <input
           type="double"
           className="Fees"
@@ -41,7 +41,7 @@ const TransferAmount = () => {
           placeholder="0"
           disabled
         ></input>
-        <lable>Total Amount In INR</lable>
+        <label>Total Amount In INR</label>
         <input
           type="double"
           name="Amount"

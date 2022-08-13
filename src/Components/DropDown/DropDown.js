@@ -1,4 +1,5 @@
 import React from "react";
+import Options from "../Options/Options";
 
 const DropDown = ({ DataList, handleChange }) => {
   return (
@@ -10,9 +11,10 @@ const DropDown = ({ DataList, handleChange }) => {
         placeholder="Select currency"
       />
       <datalist id="list">
-        {Object.keys(DataList).map((type) => (
-          <option value={type}>{type}</option>
-        ))}
+        <Options DataList={DataList} />
+        {/* {Object.keys(DataList).map((type) => (
+          <option key = {type} value={type}>{type}</option>
+        ))} */}
       </datalist>
     </>
   );
