@@ -1,6 +1,6 @@
 import React from "react";
 
-const TransferType = () => {
+const TransferDetails = () => {
   return (
     <div className="home_container_3">
       <form className="form2">
@@ -18,4 +18,4 @@ const TransferType = () => {
   );
 };
 
-export default TransferType;
+export default TransferDetails;
