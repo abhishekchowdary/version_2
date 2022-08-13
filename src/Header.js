@@ -1,17 +1,31 @@
-import React from 'react';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import img2 from "./images/imggg.jpg";
 import "./Header.css";
-import  {VscAccount } from 'react-icons/vsc';
-import img2 from './images/DBS_Logo.jpg'
+
 
 function Header() {
+  const handleClick = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
+
   return (
-    <div className='header'>
-        <img className='header_logo' src={img2} alt='DBS'></img>
-        <div className='header_quote'><h2 >Live More Bank Less </h2></div>
-        <div className="header_wisher"><h3>Hello, Welcome</h3></div>
-        <div className='header_profile'><button><VscAccount/>-Logout</button></div>
-    </div>
-  )
+    <>
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <img className="header_logo" src={img2} alt="DBS"></img>
+          <Navbar.Brand class="navbar-brand mb-0 h1 fs-2">Live More Bank Less</Navbar.Brand>
+          <Nav className="mr-auto">
+            <Nav.Link href="/home">Transaction</Nav.Link>
+            <Nav.Link href="/Logger">Logger</Nav.Link>
+            <button onClick={handleClick}>Logout</button>
+          </Nav>
+        </Container>
+      </Navbar>
+    </>
+  );
 }
 
-export default Header
+export default Header;
