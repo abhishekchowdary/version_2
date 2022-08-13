@@ -20,8 +20,8 @@ function Header() {
           <Nav className="mr-auto">
             <Nav.Link href="/home">Transaction</Nav.Link>
             <Nav.Link href="/Logger">Logger</Nav.Link>
-            <button onClick={handleClick}>Logout</button>
           </Nav>
+          <button onClick={handleClick}>Logout</button>
         </Container>
       </Navbar>
     </>

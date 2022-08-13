@@ -74,7 +74,7 @@ function Home() {
             <h2 className="dataLine"> Amount Details</h2>
             <label> Select Currecy Type</label>
             <Currency handleChange={handleChange} currencyList={currencyList} />
-            <lable>Transfering Amount </lable>
+            <lable>Transfering Amount in {currency} </lable>
             <input
               type="Double"
               name="Transfering_Amount"
