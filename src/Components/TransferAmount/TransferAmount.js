@@ -10,7 +10,7 @@ const TransferAmount = () => {
     EUR: 84,
     GBP: 102,
   };
-  const handleChange = ({ target }) => {
+  const handleCurrencyChange = ({ target }) => {
     setCurrency(target.value);
   };
   useEffect(() => {
@@ -22,8 +22,7 @@ const TransferAmount = () => {
       <form className="form3">
         <h2 className="dataLine"> Amount Details</h2>
         <label> Select Currecy Type</label>
-        {/* <Currency handleChange={handleChange} currencyList={currencyList} /> */}
-        <DropDown DataList = {currencyList} handleChange = {handleChange}/>
+        <DropDown DataList = {currencyList} handleChange = {handleCurrencyChange} />
         
         <label>Transfering Amount </label>
         <input

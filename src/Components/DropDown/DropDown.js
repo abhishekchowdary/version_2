@@ -6,11 +6,11 @@ const DropDown = ({ DataList, handleChange }) => {
     <>
       <input
         type="text"
-        list="list"
+        list="Currencylist"
         onChange={handleChange}
         placeholder="Select currency"
       />
-      <datalist id="list">
+      <datalist id="Currencylist">
         <Options DataList={DataList} />
         {/* {Object.keys(DataList).map((type) => (
           <option key = {type} value={type}>{type}</option>
