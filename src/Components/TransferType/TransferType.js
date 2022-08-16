@@ -1,9 +1,7 @@
-import React , {useState} from "react";
+import React  from "react";
 import Options from "../Options/Options";
-// import SelectDrop from '../SelectDrop/SelectDrop';
 
-const TransferType = ({messageCode , transferType , handleMessageCode , handleTransferType}) => {
- 
+const TransferType = ({messageCode , transferType , handleMessageCode , handleSubmit , transferStatus}) => {
   const MessagesList = {
     CHQD: "benificiary customer must be paid by cheque only",
     CORT: "payment is made in settlement for a trade",
@@ -19,18 +17,19 @@ const TransferType = ({messageCode , transferType , handleMessageCode , handleTr
   return (
     <form className="form4">
       <label>Transfer Type</label>
-      <select onClick={handleTransferType}>
-        <option default>Select an option</option>
-      {
+      <select>
+        <option value={transferType ?"Customer to Cutomer" : "Bank to Bank" }>{transferType ?"Customer to Cutomer" : "Bank to Bank" }</option>
+
+      {/* {
           ["Customer to Cutomer" , "Bank to Bank" , "Bank to Customer"].map(item=><option key = {item} value={item}>{item}</option>)
-      }
+      } */}
       </select>
       <label>Message Code</label>
       <select onClick={handleMessageCode}>
       <option default>Select an option</option>
         <Options DataList={MessagesList} />
       </select>
-      <button className="Transfer_Button" type="submit">
+      <button className="Transfer_Button" onClick={handleSubmit} disabled = {transferStatus}>
         <label>Transfer</label>
       </button>
     </form>

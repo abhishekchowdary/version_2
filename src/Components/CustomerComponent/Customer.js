@@ -1,8 +1,11 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 
-const Customer = ({ customerData , handleCustomerChange , handleCustomerKeyPress , customerState }) => {
-  
+const Customer = ({
+  customerData,
+  handleCustomerChange,
+  handleCustomerKeyPress,
+  customerState,
+}) => {
   return (
     <div className="home_container_2">
       <div className="form1">
@@ -46,7 +49,7 @@ const Customer = ({ customerData , handleCustomerChange , handleCustomerKeyPress
         <input
           type="text"
           name="overdraft"
-          value={customerState.overdraft}
+          value={customerState.overdraft ? "Yes" : "No"}
           onChange={handleCustomerChange}
         />
 
@@ -54,7 +57,7 @@ const Customer = ({ customerData , handleCustomerChange , handleCustomerKeyPress
         <input
           type="text"
           name="customertype"
-          value={customerState.customertype}
+          value={customerState.customertype ? "Customer" : "Bank"}
           onChange={handleCustomerChange}
         />
       </div>

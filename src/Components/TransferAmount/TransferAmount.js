@@ -1,22 +1,9 @@
 import React, { useState, useEffect } from "react";
 import DropDown from "../DropDown/DropDown";
-const TransferAmount = () => {
-  const [amount, setAmount] = useState(0);
-  const [currency, setCurrency] = useState('');
-  const [finalAmount, setFinalAmount] = useState({ tax: 0, totalAmount: 0 });
-  const currencyList = {
-    USD: 78.24,
-    JPY: 0.654,
-    EUR: 84,
-    GBP: 102,
-  };
-  const handleCurrencyChange = ({ target }) => {
-    setCurrency(target.value);
-  };
-  useEffect(() => {
-    const temp = amount * ((typeof(currencyList[currency]) === 'undefined')?0:currencyList[currency])
-    setFinalAmount({ tax: temp * 0.0025, totalAmount: temp + temp * 0.0025 });
-  }, [amount, currency]);
+const TransferAmount = ({currency , finalAmount , amount , handleCurrencyChange ,setAmount , currencyList}) => {
+  
+  
+
   return (
     <div className="home_container_4">
       <form className="form3">
