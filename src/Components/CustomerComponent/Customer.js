@@ -1,34 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Customer = ({ customerData }) => {
-  const [customerState, setCustomerState] = useState({
-    customerid: "",
-    username: "",
-    clearbalance: "",
-    customertype: "",
-    overdraft: "",
-  });
-  const getData = async () => {
-    const { data } = await axios.get(
-      "http://localhost:8085/getcustomerbyid/" + customerState.customerid
-    );
-    setCustomerState({
-      customerid: data.customerid,
-      username: data.username,
-      customertype: data.customertype,
-      clearbalance: data.clearbalance,
-      overdraft: data.overdraft,
-    });
-  };
-  const handleChange = ({ target }) => {
-    setCustomerState({ ...customerState, [target.name]: target.value });
-  };
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
-      getData();
-    }
-  };
+const Customer = ({ customerData , handleCustomerChange , handleCustomerKeyPress , customerState }) => {
+  
   return (
     <div className="home_container_2">
       <div className="form1">
@@ -40,8 +14,8 @@ const Customer = ({ customerData }) => {
           name="customerid"
           list="CustomerIdList"
           value={customerState.customerid}
-          onChange={handleChange}
-          onKeyPress={handleKeyPress}
+          onChange={handleCustomerChange}
+          onKeyPress={handleCustomerKeyPress}
           placeholder="Enter Customer ID"
         />
         <datalist id="CustomerIdList">
@@ -57,7 +31,7 @@ const Customer = ({ customerData }) => {
           type="text"
           name="username"
           value={customerState.username}
-          onChange={handleChange}
+          onChange={handleCustomerChange}
         />
 
         <label>Clear Balance:</label>
@@ -65,7 +39,7 @@ const Customer = ({ customerData }) => {
           type="text"
           name="clearbalance"
           value={customerState.clearbalance}
-          onChange={handleChange}
+          onChange={handleCustomerChange}
         />
 
         <label>Over Draft:</label>
@@ -73,7 +47,7 @@ const Customer = ({ customerData }) => {
           type="text"
           name="overdraft"
           value={customerState.overdraft}
-          onChange={handleChange}
+          onChange={handleCustomerChange}
         />
 
         <label>Customer Type:</label>
@@ -81,7 +55,7 @@ const Customer = ({ customerData }) => {
           type="text"
           name="customertype"
           value={customerState.customertype}
-          onChange={handleChange}
+          onChange={handleCustomerChange}
         />
       </div>
     </div>
