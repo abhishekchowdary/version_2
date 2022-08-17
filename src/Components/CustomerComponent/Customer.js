@@ -31,6 +31,7 @@ const Customer = ({
 
         <label>Customer Name:</label>
         <input
+        required
           type="text"
           name="username"
           value={customerState.username}
@@ -40,6 +41,7 @@ const Customer = ({
         <label>Clear Balance:</label>
         <input
           type="text"
+          required
           name="clearbalance"
           value={customerState.clearbalance}
           onChange={handleCustomerChange}
@@ -47,6 +49,7 @@ const Customer = ({
 
         <label>Over Draft:</label>
         <input
+        required
           type="text"
           name="overdraft"
           value={customerState.overdraft ? "Yes" : "No"}
@@ -59,6 +62,7 @@ const Customer = ({
           name="customertype"
           value={customerState.customertype ? "Customer" : "Bank"}
           onChange={handleCustomerChange}
+          required
         />
       </div>
     </div>

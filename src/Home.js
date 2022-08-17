@@ -138,12 +138,13 @@ function Home() {
   };
   const handleSubmit = ()=>{
     axios.post("http://localhost:8085/addTransactiondetails" ,body).then(res=>{
-      if(res.status === 200){
+      if(res.status === 200 && (customerState.clearbalance >= finalAmount.totalAmount || customerState.overdraft)){
         alert("Success")
         // <Logger/>
       }else{
         alert("failed")
       }
+      window.location.reload()
     })
   }
   return (

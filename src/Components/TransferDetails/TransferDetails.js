@@ -76,6 +76,7 @@ const TransferDetails = ({ bic, transferType , receiver , receiverBank , handleR
               value={receiver.receiverid}
               onChange={handleReceiver}
               name="receiverid"
+              required
             />{" "}
             <label> Account Holder Name</label>{" "}
             <input
@@ -83,6 +84,7 @@ const TransferDetails = ({ bic, transferType , receiver , receiverBank , handleR
               value={receiver.receivername}
               onChange={handleReceiver}
               name="receivername"
+              required
             />{receiverStatus}
           </>
         )}

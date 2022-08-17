@@ -17,6 +17,7 @@ const TransferAmount = ({currency , finalAmount , amount , handleCurrencyChange 
           name="Transfering_Amount"
           placeholder="0"
           value={amount}
+          required
           onChange={(e) => setAmount(e.target.value)}
         ></input>
         <label>Transaction Fees in INR</label>

@@ -13,11 +13,11 @@ const TransferType = ({messageCode , transferType , handleMessageCode , handleSu
     REPA: "Payments has a related e-Payments interface",
     SDVA: "Payment must be executed with same day value to the",
   };
-  
+  const date  = new Date();
   return (
     <form className="form4">
       <label>Transfer Type</label>
-      <select>
+      <select required>
         <option value={transferType ?"Customer to Cutomer" : "Bank to Bank" }>{transferType ?"Customer to Cutomer" : "Bank to Bank" }</option>
 
       {/* {
@@ -29,9 +29,10 @@ const TransferType = ({messageCode , transferType , handleMessageCode , handleSu
       <option default>Select an option</option>
         <Options DataList={MessagesList} />
       </select>
+      {(date.getDay()!==0 && date.getDay()!==6)&&
       <button className="Transfer_Button" onClick={handleSubmit} disabled = {transferStatus}>
         <label>Transfer</label>
-      </button>
+      </button>}
     </form>
   );
 };
